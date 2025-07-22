@@ -72,6 +72,28 @@ cmake --build build
 ## Prebuilt Binary
 A prebuilt binary for the project can be found [here](https://github.com/Partha11/flow-network-cplex/releases/tag/v0.0.1). You can download the binary to test the project. The binary is compiled using the latest version of CPLEX (22.1.1). It should run without installing the CPLEX libraries on your machine.
 
+## Output
+
+The screenshot above shows the solution for the 7-node lubricant flow problem. The solver outputs:
+
+- Optimal flow quantities for each edge
+- Total minimum cost of shipment
+
+<img src="assets/img/result.png" alt="Output" width="800">
+
+### Solution:
+
+#### Flow Assignment:
+
+| From | To | Quantity | Cost/Unit | Total Cost |
+|------|----|----------|-----------|------------|
+| 1    | 4 | 40       | 2          | 80         |
+| 3    | 7 | 30       | 7          | 210        |
+| 4    | 5 | 50       | 6          | 300        |
+| 5    | 3 | 50       | 5          | 250        |
+
+The total cost of shipment is **840**.
+
 <!-- Badges & links -->
 [cplex-image]: https://img.shields.io/badge/CPLEX-22.1.1-blue?style=flat-square
 [cplex-url]: https://www.ibm.com/products/ilog-cplex-optimization-studio
