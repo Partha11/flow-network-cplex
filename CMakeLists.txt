@@ -13,7 +13,7 @@ file(GLOB SOURCE_FILES "src/*.cpp")
 add_executable(cplex_app ${SOURCE_FILES})
 
 # CPLEX header files
-include_directories(${CPLEX_HOME}/include)
+target_include_directories(cplex_app PRIVATE ${CPLEX_HOME}/include)
 
 # Custom header files
 target_include_directories(cplex_app PRIVATE include)
