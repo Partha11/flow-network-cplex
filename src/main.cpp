@@ -1,8 +1,23 @@
+/**
+ * @file main.cpp
+ * @brief Main program demonstrating minimum cost network flow solver
+ * @author Abir Chakraborty Partha
+ * @date 22 Jul, 2025
+ * 
+ * This program solves a lubricant transportation problem using the
+ * NetworkFlow class and IBM CPLEX optimization library. The problem involves
+ * transporting lubricant from supply nodes to demand nodes at minimum cost.
+ */
+
 #include <iostream>
 #include "NetworkFlow.hpp"
 
 using namespace std;
 
+/**
+ * @brief Main function - Entry point for the lubricant transportation optimization
+ * @return 0 if successful, 1 if error occurred
+ */
 int main() {
     try {
         NetworkFlow net(7);
@@ -29,8 +44,7 @@ int main() {
         net.addEdge(6, 7, 20);
 
         // Validate
-        std::string validation = net.validate();
-        if (validation != "valid") {
+        if (std::string validation = net.validate(); validation != "valid") {
             std::cerr << "Validation failed: " << validation << std::endl;
             return 1;
         }
@@ -44,9 +58,11 @@ int main() {
 
             std::cout << "Flow Assignment:" << std::endl;
             for (const auto& [edge, flow] : sol.flows) {
-                int i = edge.first, j = edge.second;
-                // Find cost
+                int i = edge.first;
+                int j = edge.second;
                 double cost = 0;
+
+                // Find cost
                 for (const auto& e : net.getEdges()) {
                     if (e.from == i && e.to == j) {
                         cost = e.cost;
