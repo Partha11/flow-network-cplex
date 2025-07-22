@@ -73,7 +73,7 @@ cmake --build build
 A prebuilt binary for the project can be found [here](https://github.com/Partha11/flow-network-cplex/releases/tag/v0.0.1). You can download the binary to test the project. The binary is compiled using the latest version of CPLEX (22.1.1). It should run without installing the CPLEX libraries on your machine.
 
 <!-- Badges & links -->
-[cplex-image]: https://img.shields.io/badge/CPLEX-22.1.1-blue
+[cplex-image]: https://img.shields.io/badge/CPLEX-22.1.1-blue?style=flat-square
 [cplex-url]: https://www.ibm.com/products/ilog-cplex-optimization-studio
 [cpp-image]: https://img.shields.io/badge/C++-17-00599C.svg?style=flat-square&logo=cplusplus
 [cpp-url]: https://isocpp.org/
